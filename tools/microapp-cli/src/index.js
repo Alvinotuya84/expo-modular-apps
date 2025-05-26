@@ -1,4 +1,3 @@
-// tools/microapp-cli/src/index.js
 const { Command } = require('commander');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
