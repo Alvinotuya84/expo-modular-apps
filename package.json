@@ -1,0 +1,25 @@
+{
+  "name": "microapps-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace main-app start",
+    "dev:main": "yarn workspace main-app start",
+    "dev:ecommerce": "yarn workspace ecommerce-app start",
+    "dev:banking": "yarn workspace banking-app start",
+    "dev:social": "yarn workspace social-app start",
+    "build": "yarn workspaces run build",
+    "lint": "yarn workspaces run lint",
+    "type-check": "yarn workspaces run type-check"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
