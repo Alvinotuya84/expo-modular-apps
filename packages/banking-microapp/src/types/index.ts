@@ -1,4 +1,4 @@
-export interface TestConfig {
+export interface BankingConfig {
   name: string;
   version: string;
   features: string[];
@@ -8,20 +8,20 @@ export interface TestConfig {
   };
 }
 
-export interface TestState {
+export interface BankingState {
   isLoading: boolean;
   error: string | null;
   data: any;
   lastUpdated?: Date;
 }
 
-export interface TestActions {
+export interface BankingActions {
   loadData: () => Promise<void>;
   clearError: () => void;
   refreshData: () => Promise<void>;
 }
 
-export interface TestUser {
+export interface BankingUser {
   id: string;
   name: string;
   email: string;

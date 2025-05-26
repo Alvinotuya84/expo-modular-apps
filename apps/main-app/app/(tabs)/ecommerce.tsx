@@ -1,13 +1,6 @@
-
 import React from 'react';
-import { View, Text } from 'react-native';
+import EcommerceApp from '@packages/ecommerce-microapp';
 
-const EcommerceScreen = () => {
-    return (
-        <View>
-            <Text>Ecommerce</Text>
-        </View>
-    );
-};
-
-export default EcommerceScreen;
+export default function EcommerceTab() {
+  return <EcommerceApp microappName="ecommerce" />;
+}

@@ -27,14 +27,14 @@ Expo Modular Apps is a comprehensive monorepo solution that demonstrates how to 
 expo-modular-apps/
 ├── apps/
 │   ├── main-app/                    # Super app (tab-based)
-│   ├── ecommerce-app/              # Standalone e-commerce app
-│   ├── banking-app/                # Standalone banking app
-│   └── social-app/                 # Standalone social app
+│   ├── ecommerce-app/              # Standalone e-commerce app (CLI-generated)
+│   ├── banking-app/                # Standalone banking app (CLI-generated)
+│   └── social-app/                 # Standalone social app (CLI-generated)
 ├── packages/
 │   ├── shared-types/               # Common TypeScript definitions
-│   ├── ecommerce-microapp/         # Embeddable e-commerce component
-│   ├── banking-microapp/           # Embeddable banking component
-│   └── social-microapp/            # Embeddable social component
+│   ├── ecommerce-microapp/         # Embeddable e-commerce component (CLI-generated)
+│   ├── banking-microapp/           # Embeddable banking component (CLI-generated)
+│   └── social-microapp/            # Embeddable social component (CLI-generated)
 ├── tools/
 │   └── microapp-cli/               # CLI for generating microapps
 └── package.json                    # Yarn workspace configuration
@@ -80,6 +80,17 @@ yarn microapp create loyalty
 # - apps/loyalty-app (standalone app)
 # - packages/loyalty-microapp (embeddable component)
 # - Tab integration in main app
+```
+
+### 🎯 Live Examples
+
+This repository includes three working examples generated using the CLI:
+
+```bash
+# Examples were created using these commands:
+yarn microapp create ecommerce    # E-commerce functionality
+yarn microapp create banking      # Financial services
+yarn microapp create social       # Social networking features
 ```
 
 ## 📋 Available Commands
@@ -131,13 +142,13 @@ yarn type-check
 ### 1. Creating a New Microapp
 
 ```bash
-# Create a new microapp called "music"
+# Create a new microapp called "music" (following the pattern of existing examples)
 yarn microapp create music
 ```
 
 This generates:
 - `apps/music-app/` - Standalone Expo Router app
-- `packages/music-microapp/` - Embeddable React component
+- `packages/music-microapp/` - Embeddable React component  
 - `apps/main-app/app/(tabs)/music.tsx` - Tab integration
 
 ### 2. Adding the Tab to Main App
@@ -164,6 +175,13 @@ yarn workspace music-app start
 **Embedded Development:**
 ```bash
 yarn dev  # Main app with all microapps as tabs
+```
+
+**Test with existing examples:**
+```bash
+yarn workspace ecommerce-app start   # Test CLI-generated ecommerce app
+yarn workspace banking-app start     # Test CLI-generated banking app
+yarn workspace social-app start      # Test CLI-generated social app
 ```
 
 ### 4. Cross-Microapp Navigation
@@ -222,7 +240,7 @@ Core dependencies are shared across all apps:
 ### Microapp Package Example
 
 ```typescript
-// packages/ecommerce-microapp/src/index.tsx
+// packages/ecommerce-microapp/src/index.tsx (CLI-generated)
 export { EcommerceMicroappProvider } from './components/EcommerceMicroappProvider';
 export { EcommerceApp } from './screens/EcommerceApp';
 export * from './types';
@@ -234,7 +252,7 @@ export { EcommerceApp as default } from './screens/EcommerceApp';
 ### Using in Main App
 
 ```tsx
-// apps/main-app/app/(tabs)/ecommerce.tsx
+// apps/main-app/app/(tabs)/ecommerce.tsx (CLI-generated)
 import React from 'react';
 import EcommerceApp from '@packages/ecommerce-microapp';
 
@@ -246,20 +264,48 @@ export default function EcommerceTab() {
 ### Using in Standalone App
 
 ```tsx
-// apps/ecommerce-app/app/(tabs)/index.tsx
+// apps/ecommerce-app/app/(tabs)/index.tsx (CLI-generated)
 import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import EcommerceApp from '@packages/ecommerce-microapp';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Standalone E-commerce App</Text>
+      <Text style={styles.title}>Standalone Ecommerce App</Text>
+      <Text style={styles.subtitle}>This is the home of your ecommerce microapp</Text>
+      
       <View style={styles.microappContainer}>
         <EcommerceApp microappName="ecommerce" />
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  microappContainer: {
+    flex: 1,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+});
 ```
 
 ## 🎯 Use Cases

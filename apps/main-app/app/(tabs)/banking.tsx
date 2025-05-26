@@ -1,14 +1,6 @@
-//simple scaffold for react native screen
-
 import React from 'react';
-import { View, Text } from 'react-native';
+import BankingApp from '@packages/banking-microapp';
 
-const BankingScreen = () => {
-    return (
-        <View>
-            <Text>Banking</Text>
-        </View>
-    );
-};
-
-export default BankingScreen;
+export default function BankingTab() {
+  return <BankingApp microappName="banking" />;
+}

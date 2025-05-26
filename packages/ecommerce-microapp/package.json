@@ -1,5 +1,5 @@
 {
-  "name": "@packages/test-microapp",
+  "name": "@packages/ecommerce-microapp",
   "version": "1.0.0",
   "main": "src/index.tsx",
   "types": "src/index.tsx",

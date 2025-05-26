@@ -1,20 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import type { MicroappProps } from '@packages/shared-types';
-import { TestMicroappProvider } from '../components/TestMicroappProvider';
+import { BankingMicroappProvider } from '../components/BankingMicroappProvider';
 
-interface TestAppProps extends Partial<MicroappProps> {}
+interface BankingAppProps extends Partial<MicroappProps> {}
 
-export function TestApp(props: TestAppProps = {}) {
+export function BankingApp(props: BankingAppProps = {}) {
   return (
-    <TestMicroappProvider>
+    <BankingMicroappProvider>
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        <Text style={styles.title}>Test Microapp</Text>
-        <Text style={styles.subtitle}>This is the test microapp package</Text>
+        <Text style={styles.title}>Banking Microapp</Text>
+        <Text style={styles.subtitle}>This is the banking microapp package</Text>
         
         <View style={styles.infoCard}>
           <Text style={styles.infoTitle}>🎯 Microapp Info</Text>
-          <Text style={styles.infoText}>Name: {props.microappName || 'test'}</Text>
+          <Text style={styles.infoText}>Name: {props.microappName || 'banking'}</Text>
           <Text style={styles.infoText}>Type: Embeddable Component</Text>
           <Text style={styles.infoText}>Status: Ready for development</Text>
         </View>
@@ -29,11 +29,11 @@ export function TestApp(props: TestAppProps = {}) {
         
         <Text style={styles.description}>
           This component can be embedded in the main app as a tab,
-          or used independently in the standalone test app.
-          Start building your test features here!
+          or used independently in the standalone banking app.
+          Start building your banking features here!
         </Text>
       </ScrollView>
-    </TestMicroappProvider>
+    </BankingMicroappProvider>
   );
 }
 

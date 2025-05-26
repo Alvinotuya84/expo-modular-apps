@@ -1,14 +1,6 @@
-//simple scaffold for react native screen
-
 import React from 'react';
-import { View, Text } from 'react-native';
+import SocialApp from '@packages/social-microapp';
 
-const SocialScreen = () => {
-    return (
-        <View>
-            <Text>Social</Text>
-        </View>
-    );
-};
-
-export default SocialScreen;
+export default function SocialTab() {
+  return <SocialApp microappName="social" />;
+}
