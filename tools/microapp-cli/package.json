@@ -1,0 +1,30 @@
+{
+  "name": "@tools/microapp-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for generating microapps in the monorepo",
+  "main": "src/index.js",
+  "bin": {
+    "microapp": "bin/microapp.js",
+    "microapp-cli": "bin/microapp.js"
+  },
+  "scripts": {
+    "build": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^8.2.6",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^8.2.11",
+    "@types/mustache": "^4.2.6",
+    "typescript": "^5.8.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

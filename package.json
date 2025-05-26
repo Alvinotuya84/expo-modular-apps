@@ -12,6 +12,9 @@
     "dev:ecommerce": "yarn workspace ecommerce-app start",
     "dev:banking": "yarn workspace banking-app start",
     "dev:social": "yarn workspace social-app start",
+    "microapp": "node tools/microapp-cli/bin/microapp.js",
+    "microapp:create": "yarn microapp create",
+    "microapp:list": "yarn microapp list",
     "build": "yarn workspaces run build",
     "lint": "yarn workspaces run lint",
     "type-check": "yarn workspaces run type-check"
