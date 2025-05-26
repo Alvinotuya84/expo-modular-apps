@@ -6,13 +6,20 @@
       "paths": {
         "@/*": ["./apps/main-app/*"],
         "@packages/*": ["./packages/*"]
-      }
+      },
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true
     },
     "include": [
       "apps/**/*",
       "packages/**/*"
     ],
     "exclude": [
-      "node_modules"
+      "node_modules",
+      "**/node_modules",
+      "**/dist",
+      "**/build"
     ]
   }

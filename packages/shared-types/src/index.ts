@@ -1,7 +1,7 @@
 export interface MicroappConfig {
     name: string;
     displayName: string;
-    icon: string;
+    version: string;
     route: string;
   }
   
@@ -13,3 +13,15 @@ export interface MicroappConfig {
   export interface MicroappProps extends NavigationProps {
     microappName: string;
   }
+  
+  export interface BaseScreenProps {
+    title?: string;
+    subtitle?: string;
+  }
+  
+  export interface TabConfig {
+    name: string;
+    title: string;
+    icon: string;
+  }
+  
