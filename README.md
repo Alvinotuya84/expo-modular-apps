@@ -1,4 +1,4 @@
-# Expo Modular Apps
+# Expo SDK 53 MicroApps Architecture
 
 > A production-ready microapps architecture using Expo Router and Yarn workspaces for scalable React Native development.
 
@@ -9,7 +9,7 @@
 
 ## 🌟 Overview
 
-Expo Modular Apps is a comprehensive monorepo solution that demonstrates how to build scalable mobile applications using a microapps architecture. Each microapp can function both as a standalone application and as an embedded component within a main super-app.
+A comprehensive monorepo solution that demonstrates how to build scalable mobile applications using a microapps architecture. Each microapp can function both as a standalone application and as an embedded component within a main super-app.
 
 ### ✨ Key Features
 
